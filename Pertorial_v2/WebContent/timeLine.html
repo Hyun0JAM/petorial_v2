@@ -20,7 +20,7 @@
             <center>
                 <div class="top-search">
                 <form action="/Petorial/TimelineServlet" method="POST">
-                    <input type="text" id="search" name="search" placeholder="Search">
+                    <input type="text" id="search" name="search">
                     <button type="submit" style="width:20px;height:20px;">
                     	<img src="images/magnifier.png" id="search-icon">
                     </button>
@@ -41,7 +41,7 @@
                             <img src="<%=photo.get(i).getTm_userimg() %>" style="width: 50px;">
                         </div>
                         <div class="name">
-                            <h5><%=photo.get(i).getTm_nick() %></h5>
+                            <h5></h5>
                         </div>
                         <a id="kakao-link-btn" href="javascript:sendLink()">
                         	<img src="images/speech-bubble.png"
@@ -76,7 +76,7 @@
 	                    <div class="heart">
 	                    	<input type="hidden" name="tm_no" value="<%=photo.get(i).getTm_no() %>">
 	                    	<Button type="submit"><img src="images/like_on.png" id="like-icon" name="like"></Button>
-	                    	<p id="cnt"><%=photo.get(i).getLikes().size() %></p>
+	                    	<p id="cnt"></p>
 	                    </div>
                     </form>
                     <div style="float:left;height:40px;width:399px;border-top: dotted 1px darkgray;">
@@ -85,8 +85,8 @@
                 
                     <div class="comments" style="display:unset">
 	                    	<div id="comments-out">
-	                    		<label><%=photo.get(i).getComments().get(j).getCm_nick() %></label>
-		                    	<p>&nbsp;:&nbsp;&nbsp;<%=photo.get(i).getComments().get(j).getCm_text() %></p>
+	                    		<label></label>
+		                    	<p></p>
 	                    	</div>
 	                </div>
 	                <form id="comments-form" action="/Petorial/CommentsServlet" method="POST">
