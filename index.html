@@ -5,141 +5,126 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <title>Petorial</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/assets/css/bootstrap.min.css"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script>
-    function login(){
-        document.getElementById('login-form').style.display="";
-        document.getElementById('register-form').style.display="none";
-        document.getElementById('forgot-password-form').style.display="none";
-    }
-    function register(){
-        document.getElementById('register-form').style.display="";
-        document.getElementById('login-form').style.display="none";
-        document.getElementById('forgot-password-form').style.display="none";
-    }
-    function forgot(){
-        document.getElementById('login-form').style.display="none";
-        document.getElementById('forgot-password-form').style.display="";
-        document.getElementById('register-form').style.display="none";
-    }
+    $(document).ready(function(){
+        $("#home-login-btn").click(function(){
+            alert("로그인 되었습니다.");
+        });
+    });
+    $("#regist-view").hide();$("#forgot-view").hide();
+    $(".go-login-btn").click(function(){
+        $("#login-view").show();
+        $("#regist-view").hide();
+        $("#forgot-view").hide();
+    });
+    $(".go-regist-btn").click(function(){
+        $("#regist-view").show()
+        $("#login-view").hide();
+        $("#forgot-view").hide();;
+    });
+    $(".go-forgot-btn").click(function(){
+        $("#forgot-view").show();
+        $("#login-view").hide();
+        $("#regist-view").hide();
+    });
 </script>
 </head>
 <body>
-<center>
     <div id="login_logo" style="margin-top:140px;">
-        <img src="images/dog_cat.png" style="height:200px;width: 200px; margin-bottom:50px;"></img>
+        <img src="https://png.pngtree.com/png-clipart/20190515/original/pngtree-love-pet-logo-design-template-png-image_3555890.jpg" style="height:200px;width: 200px; margin-bottom:50px;"></img>
     </div>
-</center>
-<!-- LOGIN FORM -->
-<center>
-    <div class="login-form-1">
-        <form id="login-form" class="text-left" style="display: unset;" action="/Petorial/LoginServlet" method="POST">
-            <div class="logo">login</div>
-            <div class="login-form-main-message"></div>
-            <div class="main-login-form">
-                <div class="login-group">
-                    <div class="form-group">
-                        <label for="lg_username" class="sr-only">E-mail</label><br>
-                        <input type="text" class="form-control" id="lg_username" name="email" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="lg_password" class="sr-only">Password</label>
-                        <input type="password" class="form-control" id="lg_password" name="pw">
-                    </div>
-                    <div class="form-group login-group-checkbox">
-                        <input type="checkbox" id="lg_remember" name="remember">
-                        <label for="lg_remember">remember</label>
-                    </div>
-                </div>
-                <button type="submit" class="login-button"><i class="fa fa-chevron-right">Go!</i></button>
+    <!-- LOGIN FORM -->
+    <div id="login-view">
+        <div class="logo">login</div>
+        <form name="login-frm">
+            <div class="form-group">
+                <label for="lg_username">E-mail</label><br>
+                <input type="text" id="lg_username" name="email">
             </div>
-            <div class="etc-login-form">
-                <p>forgot your password? <a href="javascript:forgot()">click here</a></p>
-                <p>new user? <a href="javascript:register()">create new account</a></p>
+            <div class="form-group">
+                <label for="lg_password" class="sr-only">Password</label>
+                <input type="password" id="lg_password" name="pw">
             </div>
-            <a id="custom-login-btn" href="javascript:loginWithKakao()">
-				<img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300"/>
-			</a>
-			<script type='text/javascript'>
-			  //<![CDATA[
-			    // 사용할 앱의 JavaScript 키를 설정해 주세요.
-			    Kakao.init('fa8067e5a45ccec81f60caf0e1baa778');
-			    function loginWithKakao() {
-			      // 로그인 창을 띄웁니다.
-			      Kakao.Auth.login({
-			        success: function(authObj) {
-			        	location.href= "/Petorial/TimelineServlet"
-			        },
-			        fail: function(err) {
-			          alert(JSON.stringify(err));
-			        }
-			      });
-			    };
-			  //]]>
-			</script>
+            <div class="form-group">
+                <label for="lg_remember">remember</label>
+                <input type="checkbox" id="lg_remember" name="remember">
+            </div>
+            <div class="form-group">
+                <button type="submit">Go!</i></button>
+            </div>
         </form>
+        <div>
+            <p>forgot your password? <a href="#" class="go-forgot-btn">click here</a></p>
+            <p>new user? <a href="#" class="go-regist-btn">create new account</a></p>
+        </div>
+        <a id="custom-login-btn" href="javascript:loginWithKakao()">
+            <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300"/>
+        </a>
+        <script type='text/javascript'>
+            //<![CDATA[
+            Kakao.init('fa8067e5a45ccec81f60caf0e1baa778');
+            function loginWithKakao() {
+                Kakao.Auth.login({
+                success: function(authObj) {location.href= "/Petorial/TimelineServlet"},
+                fail: function(err) {alert(JSON.stringify(err));}
+                });
+            };
+            //]]>
+        </script>
     </div>
     <!--register Form-->
-    <div class="login-form-1">
-        <form id="register-form" class="text-left" style="display: none; margin-top: -10px;" action="/Petorial/RegistServlet" method="POST" enctype="multipart/form-data">
-            <div class="logo">register</div>
-            <div class="login-form-main-message"></div>
-            <div class="main-login-form">
-                <div class="login-group">
-                	<div class="form-group">
-                        <input type="file" class="form-control" id="image" name="image" style="margin-left: 10px;">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="reg_username" name="email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="reg_password" name="pw">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="reg_password_confirm" name="pwcheck">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="reg_email" name="birth">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="reg_fullname" name="nickname">
-                    </div>
-                    <div class="form-group login-group-checkbox">
-                        <input type="checkbox" class="" id="reg_agree" name="reg_agree">
-                        <label for="reg_agree">i agree with <a href="#">terms</a></label>
-                    </div>
-                </div>
-                <button type="submit" class="login-button"><i class="fa fa-chevron-right">Go!</i></button>
+    <div id="regist-view">
+        <div class="logo">register</div>
+        <form name="regist-frm">
+            <div class="form-group">
+                <input type="file" class="form-control" id="image" name="image" style="margin-left: 10px;">
             </div>
-            <div class="etc-login-form">
-                <p>already have an account?</p>
-                <a href="javascript:login()">login here</a>
+            <div class="form-group">
+                <input type="text" class="form-control" id="reg_username" name="email">
             </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="reg_password" name="pw">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="reg_password_confirm" name="pwcheck">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="reg_email" name="birth">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="reg_fullname" name="nickname">
+            </div>
+            <div class="form-group login-group-checkbox">
+                <input type="checkbox" class="" id="reg_agree" name="reg_agree">
+                <label for="reg_agree">i agree with <a href="#">terms</a></label>
+            </div>
+            <button type="submit" class="regist-btn">Go!</i></button>
         </form>
+        <div class="go-login-view">
+            <p>already have an account?</p>
+            <a href="#" class="go-login-view">sign in</a>
+        </div>
     </div>
-
-    <div class="login-form-1">
-        <form id="forgot-password-form" class="text-left" style="display: none">
-            <div class="logo">forgot password</div>
-            <div class="etc-login-form">
-                <p>When you fill in your registered email address, you will be sent instructions on how to reset your password.</p>
+    
+    <div id="forgot-view">
+        <div class="logo">forgot password</div>
+        <div>
+            <p>When you fill in your registered email address, you will be sent instructions on how to reset your password.</p>
+        </div>
+        <form name="forgot-frm">
+            <div class="form-group">
+                <label for="fp_email" class="sr-only">Email address</label>
+                <input type="text" class="form-control" id="fp_email" name="fp_email" >
             </div>
-            <div class="login-form-main-message"></div>
-            <div class="main-login-form">
-                <div class="login-group">
-                    <div class="form-group">
-                        <label for="fp_email" class="sr-only">Email address</label>
-                        <input type="text" class="form-control" id="fp_email" name="fp_email" >
-                    </div>
-                </div>
-                <button type="submit" class="login-button"><i class="fa fa-chevron-right">Go!</i></button>
-            </div>
-            <div class="etc-login-form">
-                <p>already have an account?</p> <a href="javascript:login()">login here</a>
-                <p>new user? <a href="javascript:register();">create new account</a></p>
-            </div>
+            <button type="submit" class="forgot-btn"></button>
         </form>
+        <div>
+            <p>already have an account?</p> <a href="#" class="go-login-view">login here</a>
+            <p>new user? <a href="#" class="go-regist-view">create new account</a></p>
+        </div>
     </div>
-</center>
-<p>Petorial<br>졸업작품_웹디자인<br>20131284 컴퓨터공학과 최현영</p>
+    <p>Petorial<br/>20131284 컴퓨터공학과 최현영</p>
 </body>
