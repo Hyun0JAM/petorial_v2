@@ -30,6 +30,7 @@
     background-color: white;
     width:400px;
     margin: 0 auto;
+    border-radius: 5px;
     box-shadow: 2px 2px 3px lightgray;
 }
 .form-group>input{
@@ -49,19 +50,20 @@ form[name="login-frm"]>button{
 </style>
 <script>
     $(document).ready(function(){
+        alert();
         $("#home-login-btn").click(function(){
             alert("로그인 되었습니다.");
         });
-    });
-    $("#regist-view").hide();$("#forgot-view").hide();
-    $(".go-login-btn").click(function(){
-        $("#login-view").show();$("#regist-view").hide();$("#forgot-view").hide();
-    });
-    $(".go-regist-btn").click(function(){
-        $("#regist-view").show();$("#login-view").hide();$("#forgot-view").hide();;
-    });
-    $(".go-forgot-btn").click(function(){
-        $("#forgot-view").show();$("#login-view").hide();$("#regist-view").hide();
+        $("#regist-view").hide();$("#forgot-view").hide();
+        $(".go-login-btn").click(function(){
+            $("#login-view").show();$("#regist-view").hide();$("#forgot-view").hide();
+        });
+        $(".go-regist-btn").click(function(){
+            $("#regist-view").show();$("#login-view").hide();$("#forgot-view").hide();;
+        });
+        $(".go-forgot-btn").click(function(){
+            $("#forgot-view").show();$("#login-view").hide();$("#regist-view").hide();
+        });
     });
 </script>
 </head>
