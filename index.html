@@ -5,27 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <title>Petorial</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/assets/css/bootstrap.min.css"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 <style>
 #content{
     background-color: rgb(250,250,250);
     width:100%;
     height:100%;
 }
-#login_logo{
-    width: 200px;
+#logo{
+    padding-top:140px;
     margin: 0 auto;
+    height:100px;
+    width: 100px; 
+    margin-bottom:50px;
+}
+#logo>img{
+    width:100%;
 }
 #login-view{
     background-color: white;
-    width:300px;
+    width:400px;
     margin: 0 auto;
     box-shadow: 2px 2px 3px lightgray;
 }
 .form-group>input{
-    width: 180px;
+    width: 280px;
+}
+.form-group>label{
+    width: 100px;
+}
+.subject{
+    font-weight: bold;
+    text-align: center;
+}
+form[name="login-frm"]>button{
+    width: 100px;
+    margin: 0 auto;
 }
 </style>
 <script>
@@ -48,28 +67,26 @@
 </head>
 <body>
     <div id="content">
-        <div id="login_logo" style="padding-top:140px;">
-            <img src="https://png.pngtree.com/png-clipart/20190515/original/pngtree-love-pet-logo-design-template-png-image_3555890.jpg" style="height:200px;width: 200px; margin-bottom:50px;"></img>
+        <div id="logo" style="">
+            <img src="/img/icons8-pastel-64.png"></img>
         </div>
         <!-- LOGIN FORM -->
         <div id="login-view">
-            <h2 class="logo">login</h2>
-            <form name="login-frm">
+            <h2 class="subject">Login</h2>
+            <form name="login-frm" class="row">
                 <div class="form-group">
-                    <label for="lg_username">E-mail</label><br>
-                    <input type="text" class="form-control" id="lg_username" name="email">
+                    <label for="lg_username" class="form-control">E-mail</label><br>
+                    <input type="text" class="form-control input-data" id="lg_username" name="email">
                 </div>
                 <div class="form-group">
-                    <label for="lg_password" class="sr-only">Password</label>
-                    <input type="password" class="lg_input" id="lg_password" name="pw">
+                    <label for="lg_password" class="form-control">Password</label>
+                    <input type="password" class="form-control input-data" id="lg_password" name="pw">
                 </div>
                 <div class="form-group">
-                    <label for="lg_remember">remember</label>
-                    <input type="checkbox" class="lg_input" id="lg_remember" name="remember">
+                    <label for="lg_remember" class="form-control">remember</label>
+                    <input type="checkbox" class="form-control input-data" id="lg_remember" name="remember">
                 </div>
-                <div class="form-group">
-                    <button type="submit">Go!</i></button>
-                </div>
+                <button type="submit">Go!</i></button>
             </form>
             <div>
                 <p>forgot your password? <a href="#" class="go-forgot-btn">click here</a></p>
