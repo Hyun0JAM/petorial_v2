@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Petorial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <style>
-@media all and (min-width:768px) {
-    
-}
-/*@media  only all and (max-width: 768px) { 
+@media (max-width: 480px) { 
     body { 
-        background-color: black; 
+        background-color: rgb(250,250,250);
     }
     .frm-view{
         width:90%;
+        margin: 20% auto;
+        background-color: white;
+        text-align: center;
+        padding: 5%;
+        border-radius: 5px;
+        position: relative;
+        top: 10%;
+        box-shadow: 2px 2px 3px lightgray;
     } 
+    .form-group>input{
+        height:36px;
+        width: 100%;
+    }
+    .form-group>label{
+        width: 100%;
+        font-size: 0.8em;
+    }
+    .subject{
+        font-weight: bold;
+        text-align: center;
+        color:gray;
+    }
+    form[name="login-frm"]>button{
+        width: 100px;
+        margin: 0 auto;
+        border: none;
+        background-color: #eaeaea;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+}
+@media (min-width:481px) {
+    body{
+        background-color: rgb(250,250,250);
+    }
     #logo{
-    padding-top: 20%;
-    margin: 0 auto;
-    height:100px;
-    width: 100px; 
-    margin-bottom:50px;
-    display: block;
+        padding-top: 20%;
+        margin: 0 auto;
+        height:100px;
+        width: 100px; 
+        margin-bottom:50px;
+        display: block;
     }
     .frm-view{
+        width: 400px;
         background-color: white;
         text-align: center;
         margin: 0 auto;
@@ -40,7 +72,7 @@
     }
     .form-group>input{
         height:36px;
-        width: 340px;
+        width: 380px;
     }
     .form-group>label{
         width: 100px;
@@ -59,54 +91,9 @@
         font-weight: bold;
         border-radius: 5px;
     }
-}*/
-body{
-    background-color: rgb(250,250,250);
+    a{color:gray;}
 }
-#logo{
-    padding-top: 20%;
-    margin: 0 auto;
-    height:100px;
-    width: 100px; 
-    margin-bottom:50px;
-    display: block;
-}
-.frm-view{
-    width: 400px;
-    background-color: white;
-    text-align: center;
-    margin: 0 auto;
-    padding:10px;
-    border-radius: 5px;
-    position: relative;
-    top: 10%;
-    box-shadow: 2px 2px 3px lightgray;
-}
-.form-group{
-    margin: 0 auto;
-}
-.form-group>input{
-    height:36px;
-    width: 380px;
-}
-.form-group>label{
-    width: 100px;
-    font-size: 0.8em;
-}
-.subject{
-    font-weight: bold;
-    text-align: center;
-    color:gray;
-}
-form[name="login-frm"]>button{
-    width: 100px;
-    margin: 0 auto;
-    border: none;
-    background-color: #eaeaea;
-    font-weight: bold;
-    border-radius: 5px;
-}
-a{color:gray;}
+
 </style>
 <script>
     $(document).ready(function(){
@@ -114,19 +101,26 @@ a{color:gray;}
         $(".go-login-btn").click(function(){$(".frm-view").hide();$("#login-view").show();});
         $(".go-regist-btn").click(function(){$(".frm-view").hide(); $("#regist-view").show();});
         $(".go-forgot-btn").click(function(){$(".frm-view").hide();$("#forgot-view").show();});
-        $("#home-login-btn").click(function(){alert("로그인 되었습니다.");});
+        $(".login-btn").click(function(){
+            if($("#lg_userid").val()=='daiunii' && $("#lg_password")=='1234'){
+                alert("Login success");
+            }
+            else{
+                alert("You can not access this page");
+            }
+        });
     });
 </script>
 </head>
 <body>
     <!-- <img src="https://www.petppi.com/wp-content/uploads/2019/04/dachshund-150x150.png" width="100" height="100" /> -->
-    <div id="content">
+    <div id="contents">
         <!-- LOGIN FORM -->
         <div id="login-view" class="frm-view">
             <form name="login-frm">
                 <div class="form-group">
-                    <label for="lg_username">E-mail</label><br>
-                    <input type="text" class="form-control input-data" id="lg_username" name="email">
+                    <label for="lg_userid">E-mail</label><br>
+                    <input type="text" class="form-control input-data" id="lg_userid" name="email">
                 </div>
                 <div class="form-group">
                     <label for="lg_password">Password</label>
@@ -135,7 +129,7 @@ a{color:gray;}
                 <div>
                     <label for="lg_remember">remember</label><input type="checkbox" id="lg_remember" name="remember" style="vertical-align: middle; margin-left: 5px;">
                 </div>
-                <button type="submit">Go!</i></button>
+                <button type="button" class="login-btn">Go!</i></button>
             </form>
             <div>
                 <p>forgot your password? <a href="#" class="go-forgot-btn">click here</a></p>
@@ -158,7 +152,6 @@ a{color:gray;}
         </div>
         <!--register Form-->
         <div id="regist-view" class="frm-view">
-            <div class="logo">register</div>
             <form name="regist-frm">
                 <div class="form-group">
                     <input type="file" id="image" name="image" style="margin-left: 10px;">
@@ -179,18 +172,17 @@ a{color:gray;}
                     <input type="text" class="form-control" id="reg_fullname" name="nickname">
                 </div>
                 <div class="form-group login-group-checkbox">
-                    <input type="checkbox" class="" id="reg_agree" name="reg_agree">
+                    <input type="checkbox" id="reg_agree" name="reg_agree">
                     <label for="reg_agree">i agree with <a href="#">terms</a></label>
                 </div>
                 <button type="submit" class="regist-btn">Go!</i></button>
             </form>
             <div class="go-login-view">
-                <p>already have an account?<a href="#" class="go-login-view">sign in</a></p>
+                <p>already have an account?<a href="#" class="go-login-btn">sign in</a></p>
             </div>
         </div>
         
         <div id="forgot-view" class="frm-view">
-            <div class="logo">forgot password</div>
             <div>
                 <p>When you fill in your registered email address, you will be sent instructions on how to reset your password.</p>
             </div>
@@ -202,8 +194,8 @@ a{color:gray;}
                 <button type="submit" class="forgot-btn"></button>
             </form>
             <div>
-                <p>already have an account?</p> <a href="#" class="go-login-view">login here</a>
-                <p>new user? <a href="#" class="go-regist-view">create new account</a></p>
+                <p>already have an account?</p> <a href="#" class="go-login-btn">login here</a>
+                <p>new user? <a href="#" class="go-regist-btn">create new account</a></p>
             </div>
         </div>
     </div>
