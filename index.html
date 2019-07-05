@@ -42,6 +42,7 @@
 .subject{
     font-weight: bold;
     text-align: center;
+    color:gray;
 }
 form[name="login-frm"]>button{
     width: 100px;
@@ -50,7 +51,6 @@ form[name="login-frm"]>button{
 </style>
 <script>
     $(document).ready(function(){
-        alert();
         $("#home-login-btn").click(function(){
             alert("로그인 되었습니다.");
         });
@@ -75,16 +75,16 @@ form[name="login-frm"]>button{
         <!-- LOGIN FORM -->
         <div id="login-view">
             <h2 class="subject">Login</h2>
-            <form name="login-frm" class="row">
-                <div class="form-group">
+            <form name="login-frm">
+                <div class="form-group row">
                     <label for="lg_username" class="form-control">E-mail</label><br>
                     <input type="text" class="form-control input-data" id="lg_username" name="email">
                 </div>
-                <div class="form-group">
+                <div class="form-group row">
                     <label for="lg_password" class="form-control">Password</label>
                     <input type="password" class="form-control input-data" id="lg_password" name="pw">
                 </div>
-                <div class="form-group">
+                <div class="form-group row">
                     <label for="lg_remember" class="form-control">remember</label>
                     <input type="checkbox" class="form-control input-data" id="lg_remember" name="remember">
                 </div>
