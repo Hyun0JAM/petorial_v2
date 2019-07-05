@@ -9,7 +9,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <style>
-#content{
+body,#content{
     background-color: rgb(250,250,250);
     width:100%;
     height:100vh;
@@ -28,10 +28,12 @@
     background-color: white;
     width:400px;
     margin: 0 auto;
+    padding:10px;
     border-radius: 5px;
     box-shadow: 2px 2px 3px lightgray;
 }
 .form-group>input{
+    height:38px;
     width: 280px;
 }
 .form-group>label{
@@ -45,6 +47,9 @@
 form[name="login-frm"]>button{
     width: 100px;
     margin: 0 auto;
+}
+a{
+    color:gray;
 }
 </style>
 <script>
@@ -75,15 +80,15 @@ form[name="login-frm"]>button{
             <h2 class="subject">Login</h2>
             <form name="login-frm">
                 <div class="form-group row">
-                    <label for="lg_username" class="form-control">E-mail</label><br>
+                    <label for="lg_username">E-mail</label><br>
                     <input type="text" class="form-control input-data" id="lg_username" name="email">
                 </div>
                 <div class="form-group row">
-                    <label for="lg_password" class="form-control">Password</label>
+                    <label for="lg_password">Password</label>
                     <input type="password" class="form-control input-data" id="lg_password" name="pw">
                 </div>
                 <div class="form-group row">
-                    <label for="lg_remember" class="form-control">remember</label>
+                    <label for="lg_remember">remember</label>
                     <input type="checkbox" class="form-control input-data" id="lg_remember" name="remember">
                 </div>
                 <button type="submit">Go!</i></button>
