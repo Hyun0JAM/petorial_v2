@@ -10,7 +10,7 @@
 body {background-color: rgb(250,250,250);}
 .frm-view{background-color: white;border-radius: 5px;box-shadow: 2px 2px 3px lightgray;text-align: center;}
 .subject{font-weight: bold;text-align: center;color:gray;}
-form[name="login-frm"]>button{height: 35px;margin: 0 auto;border: 1px solid lightgray;background-color: #eaeaea;color:gray;: bold;border-radius: 5px;}
+.go-submit-btn{height: 35px;margin: 0 auto;border: 1px solid lightgray;background-color: #eaeaea;color:gray;: bold;border-radius: 5px;}
 .form-group{height:40px;}
 .form-group>input{height:35px;}
 .form-group>label{font-size: 0.8em;}
@@ -20,16 +20,16 @@ a{color:gray;}
 .btn_p{margin: 5% auto;}
 .btn_p>p{margin-bottom: 0;font-size: 0.9em;}
 @media (max-width: 480px) { 
-    .frm-view{width:90%;margin: 20% auto;padding: 5%;} 
+    .frm-view{width:90%;margin: 5% auto;padding: 5%;} 
     .form-group>input{height:35px;width: 100%;padding-left: 25%;}
     .form-group>label{position: relative;top: 35px;font-weight:600;color:lightgray;width:20%;left: 0;float:left;padding-left: 10px;}
-    form[name="login-frm"]>button{width: 100%;}
+    .go-submit-btn{width: 100%;}
 }
 @media (min-width:481px) {
     .frm-view{width: 400px;margin: 0 auto;padding:10px;}
     .form-group>input{height:36px;width: 380px;}
     .form-group>label{width: 100px;font-size: 0.8em;position: relative;top: 35px;left:0; float: left;}
-    form[name="login-frm"]>button{width: 100%;}
+    .go-submit-btn{width: 100%;}
 }
 </style>
 <script>
@@ -55,13 +55,12 @@ a{color:gray;}
     });
 </script>
 </head>
-<body>
+<body style="display: inline;">
     <!-- <img src="https://www.petppi.com/wp-content/uploads/2019/04/dachshund-150x150.png" width="100" height="100" /> -->
-    <div id="contents">
+    <div id="contents" style="display: inline-block; vertical-align: middle;width: 100%;">
         <!-- LOGIN FORM -->
-        <div id="login-view" class="frm-view">
+        <div id="login-view" class="frm-view" >
             <h5 style="color: gray">login</h5>
-            <p style="font-size:0.5em;">퇴근이다!!!! 주말이다!!!</p>
             <form name="login-frm">
                 <div class="form-group">
                     <label for="lg_userid">E-mail</label><br>
@@ -74,7 +73,7 @@ a{color:gray;}
                 <div class="remember_id">
                         <input type="checkbox" id="lg_remember" name="remember"><label for="lg_remember">remember</label>
                 </div>
-                <button type="button" class="login-btn">Go!</i></button>
+                <button type="button" class="go-submit-btn">Go!</i></button>
             </form>
             <div class="btn_p">
                 <p>forgot your password? <a href="#" class="go-forgot-btn">click here</a></p>
@@ -88,7 +87,10 @@ a{color:gray;}
                 Kakao.init('fa8067e5a45ccec81f60caf0e1baa778');
                 function loginWithKakao() {
                     Kakao.Auth.login({
-                    success: function(authObj) {location.href= "/Petorial/TimelineServlet"},
+                    success: function(authObj) {
+                        alert("Social Login Success\n"+JSON.stringify(authObj));
+                        location.href="timeLine.html"
+                    },
                     fail: function(err) {alert(JSON.stringify(err));}
                     });
                 };
@@ -99,7 +101,8 @@ a{color:gray;}
         <div id="regist-view" class="frm-view">
             <form name="regist-frm">
                 <div class="form-group">
-                    <input type="file" id="image" name="image" style="margin-left: 10px;">
+                    <div style="width:80px;height:80px;border: 1px solid #eaeaea; border-radius:40px;margin: 0 auto;"></div>
+                    <input type="file" id="image" name="image" style="margin-left: 10px;display: none;">
                 </div>
                 <div class="form-group">
                     <label for="reg_username">Name</label>
@@ -110,7 +113,7 @@ a{color:gray;}
                     <input type="password" class="form-control" id="reg_password" name="pw">
                 </div>
                 <div class="form-group">
-                    <label for="reg_password_confirm">Password confirm</label>
+                    <label for="reg_password_confirm">Password</label>
                     <input type="password" class="form-control" id="reg_password_confirm" name="pwcheck">
                 </div>
                 <div class="form-group">
@@ -121,11 +124,11 @@ a{color:gray;}
                     <label for="reg_fullname">Nickname</label>
                     <input type="text" class="form-control" id="reg_fullname" name="nickname">
                 </div>
-                <div class="login-group-checkbox">
+                <div style="margin-top: 30px;">
                     <input type="checkbox" id="reg_agree" name="reg_agree">
                     <label for="reg_agree">i agree with <a href="#">terms</a></label>
                 </div>
-                <button type="submit" class="regist-btn">Go!</i></button>
+                <button type="submit" class="go-submit-btn">Go!</i></button>
             </form>
             <div class="go-login-view">
                 <p>already have an account?<a href="#" class="go-login-btn">sign in</a></p>
