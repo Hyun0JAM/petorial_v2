@@ -35,23 +35,33 @@
 form[name="comment-frm"]{margin-top: 16px;}
 form[name="comment-frm"]>textarea{width: 550px; border: 0;color: #262626;height: 18px;max-height: 80px;outline: 0;padding: 0;resize: none;}
 form[name="comment-frm"]>button{display: inline; padding:0;border:none;background-color: white; color:#3897f0;font-weight: 600; opacity: 0.5;}
-.header-menus{width: 377px;}
+.header-menus{width: 30%;}
 .header-menus>i{width: 24px;height: 24px;float: right;margin-left: 30px;}
-@media (max-width: 480px) { 
+@media (max-width: 700px) { 
+    #cardSection{width:90%;margin: 0 5%;}
 }
-@media (min-width:481px) {
+@media (min-width:700px) {
+    #cardSection{width:620px;}
 }
 </style>
 </head>
 <script>
     $("#contents").load("Webcontent/header.html");
     $("#cardSection").append($(".cards").html);
-    console.log($(".cards").html);
+    $(window).resize(sizeScript);
+    function sizeScript(){
+        var windowWidth = $( window ).width();
+        if(windowWidth < 700) {
+            $("#sideBar").hide();
+        } else {
+            $("#sideBar").show();
+        }
+    }
 </script>
 <body>
     <div id="header">
         <div id="header-content">
-            <div style="width: 36.4%;height: 32px;display: inherit;">
+            <div style="width: 30%;height: 32px;display: inherit;">
                 <i class="fab fa-instagram fa-2x" style="border-right: 1px solid black;padding-right: 16px;"></i>
                 <img src="../img/instartext.png" style="margin-left:16px;"/>
             </div>
