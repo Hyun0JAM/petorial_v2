@@ -10,14 +10,12 @@
 <style>
 body {background-color: rgb(250,250,250);}
 a{color:gray;}
-.frm-view{background-color: white;border-radius: 5px;box-shadow: 2px 2px 3px lightgray;text-align: center;}
+.frm-view{background-color: white;border-radius: 5px; border: 1px solid #efefef;text-align: center;}
 .subject{font-weight: bold;text-align: center;color:gray;}
-.go-submit-btn{height: 35px;margin: 0 auto;font-weight:bold;border: 1px solid lightgray;background-color: #eaeaea;color:gray;font-weight: bold;border-radius: 5px;}
+.go-submit-btn{height: 35px;margin: 0 auto;border:none;background-color: #fafafa;border-radius: 3px;border: 1px solid #efefef;}
 .form-group{height:40px;}
-.form-group>input{height:35px;}
+.form-group>input{height:35px;border: 1px solid #efefef;}
 .form-group>label{font-size: 0.8em;}
-.remember_id{color: gray;padding-top:3%;float: left;}
-.remember_id>input{vertical-align: middle;padding-left: 5px;}
 .btn_p{margin: 5% auto;}
 .btn_p>p{margin-bottom: 0;font-size: 0.9em;}
 .profile_img{
@@ -33,10 +31,10 @@ a{color:gray;}
     margin-bottom: 30px;
 }
 @media (max-width: 480px) { 
-    .frm-view{width:90%;margin: 5% auto;padding: 5%;} 
+    .frm-view{width:90%;margin: 0 auto; margin-top:30px; padding: 5%;} 
     .form-group>input{height:35px;width: 100%;padding-left: 25%;}
     .form-group>label{position: relative;top: 35px;font-weight:600;color:lightgray;width:20%;left: 0;float:left;padding-left: 10px;}
-    .go-submit-btn{width: 100%;}
+    .go-submit-btn{width: 100%;margin-top:10%;}
 }
 @media (min-width:481px) {
     .frm-view{width: 400px;margin: 5% auto;padding:10px;}
@@ -79,10 +77,16 @@ a{color:gray;}
 </head>
 <body style="display: inline;">
     <!-- <img src="https://www.petppi.com/wp-content/uploads/2019/04/dachshund-150x150.png" width="100" height="100" /> -->
+    
+    <div id="header" style="background-color: white;height:58px;border-bottom: 1px solid #efefef;padding: 15px;">
+        <div id="header-logo" style="width:135px;margin: 0 auto;">
+            <img src="../img/instagram-logo.png" style="margin-right:16px;width:24px;height:24px;">
+            <img class="text-logo" src="../img/instartext.png" style="height: 25px;"/>
+        </div>
+    </div>
     <div id="contents" style="display: inline-block; vertical-align: middle;width: 100%;">
         <!-- LOGIN FORM -->
         <div id="login-view" class="frm-view" >
-            <h5 style="color: gray">login</h5>
             <form name="login-frm">
                 <div class="form-group">
                     <label for="lg_userid">E-mail</label><br>
@@ -92,10 +96,10 @@ a{color:gray;}
                     <label for="lg_password">Password</label>
                     <input type="password" class="form-control input-data" id="lg_password" name="pw">
                 </div>
-                <div class="remember_id">
+                <!--<div class="remember_id">
                     <input type="checkbox" id="lg_remember" name="remember"><label for="lg_remember">remember</label>
-                </div>
-                <button type="button" class="go-submit-btn">Go!</i></button>
+                </div>-->
+                <button type="button" class="go-submit-btn"><img src="../img/login.png" style="width:24px;height:24px;"></button>
             </form>
             <div class="btn_p">
                 <p>forgot your password? <a href="#" class="go-forgot-btn">click here</a></p>
