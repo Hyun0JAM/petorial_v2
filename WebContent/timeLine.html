@@ -3,6 +3,7 @@
 <title>Petorial</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+<link rel="import" href="header.html">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
@@ -13,16 +14,13 @@
 @media (min-width:481px) {
 }
 </style>
-<script>
-    
-</script>
 </head>
+<script>
+    $("#contents").load("Webcontent/header.html");
+</script>
 <body>
-    
-    <div id="top">
-        
-    </div>
+    <div id="headImportSection"></div>
     <div id="contents">
-
+        content check
     </div>
 </body>

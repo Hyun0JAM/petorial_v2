@@ -12,7 +12,7 @@ body {background-color: rgb(250,250,250);}
 a{color:gray;}
 .frm-view{background-color: white;border-radius: 5px;box-shadow: 2px 2px 3px lightgray;text-align: center;}
 .subject{font-weight: bold;text-align: center;color:gray;}
-.go-submit-btn{height: 35px;margin: 0 auto;font-weight:bold;border: 1px solid lightgray;background-color: #eaeaea;color:gray;: bold;border-radius: 5px;}
+.go-submit-btn{height: 35px;margin: 0 auto;font-weight:bold;border: 1px solid lightgray;background-color: #eaeaea;color:gray;font-weight: bold;border-radius: 5px;}
 .form-group{height:40px;}
 .form-group>input{height:35px;}
 .form-group>label{font-size: 0.8em;}
@@ -39,7 +39,7 @@ a{color:gray;}
     .go-submit-btn{width: 100%;}
 }
 @media (min-width:481px) {
-    .frm-view{width: 400px;margin: 0 auto;padding:10px;}
+    .frm-view{width: 400px;margin: 5% auto;padding:10px;}
     .form-group>input{height:36px;width: 380px;padding-left: 80px;}
     .form-group>label{width: 75px;font-size: 0.8em;position: relative;top: 35px;left:0; float: left; color: lightgray;}
     .go-submit-btn{width: 100%;}
@@ -93,7 +93,7 @@ a{color:gray;}
                     <input type="password" class="form-control input-data" id="lg_password" name="pw">
                 </div>
                 <div class="remember_id">
-                        <input type="checkbox" id="lg_remember" name="remember"><label for="lg_remember">remember</label>
+                    <input type="checkbox" id="lg_remember" name="remember"><label for="lg_remember">remember</label>
                 </div>
                 <button type="button" class="go-submit-btn">Go!</i></button>
             </form>
@@ -111,9 +111,7 @@ a{color:gray;}
                     Kakao.Auth.login({
                     success: function(authObj) {
                         alert("Social Login Success\n"+JSON.stringify(authObj));
-                        app.get('/',function(req,res) {
-                            res.sendFile('timeLine.html');
-                        });
+                        location.href="Webcontent/timeLine.html"
                     },
                     fail: function(err) {alert(JSON.stringify(err));}
                     });
@@ -153,7 +151,7 @@ a{color:gray;}
                     <label for="reg_fullname">Nickname</label>
                     <input type="text" class="form-control" id="reg_fullname" name="nickname">
                 </div>
-                <div style="margin-top: 30px;">
+                <div style="margin: 10px 0;float:left;">
                     <input type="checkbox" id="reg_agree" name="reg_agree">
                     <label for="reg_agree">i agree with <a href="#">terms</a></label>
                 </div>
