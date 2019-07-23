@@ -5,8 +5,9 @@ body{background-color: #fafafa; font-size:0.9em;}
 #header{z-index:10;background-color: white;position:fixed;top:0;width: 100%;border-bottom: 1px solid lightgray; border-bottom: 1px solid #efefef;}
 #header-content{display: block;height: 77px;padding: 26px 20px;display: flex;max-width: 1000px;margin:0 auto;transition: all 0.5s;}    
 #header-searchbar{font-size:0.9em;height:28px;border: 1px solid #ddd; background-color: #fafafa;border-radius: 2px;text-align: center;}
-#header-menu{display:inline-block;width: 40%;}
-#header-menu>img{width: 24px;height: 24px; float: right;}
+#header-menu{display:inline-block;width: 100px;}
+#header-menu>div{width: 24px;height: 24px;margin-left:9px; float: right;}
+#header-menu>div>img{width:100%;}
 #header-logo{display: block;height: 32px;display: inherit;}
 #header-logo>img:last-child{padding-left:16px;border-left: 1px solid black;}
 /* timeline */
@@ -62,6 +63,7 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
 @media (max-width: 578px) { 
     /* none */
     #sideBar{display: none;}
+    #header-menu{position:fixed;right:40px;}
     #header-searchbar{display: none;}
     #tap_menus>a>span{display: none;}
     .my_profile_count{display: none;}
