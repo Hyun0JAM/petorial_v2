@@ -2,11 +2,8 @@
 <head>
 <title>Petorial</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script src="https://kit.fontawesome.com/789a18aea4.js"></script>
+<link rel="import" href="header.html">
+</head>
 <style>
 body {background-color: rgb(250,250,250);}
 a{color:gray;}
@@ -18,18 +15,8 @@ a{color:gray;}
 .form-group>label{font-size: 0.8em;}
 .btn_p{margin: 5% auto;}
 .btn_p>p{margin-bottom: 0;font-size: 0.9em;}
-.profile_img{
-    width:80px;
-    height:80px;
-    border: 1px solid #eaeaea; 
-    border-radius:40px;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    overflow: hidden;
-}
-.profile_img_area{
-    margin-bottom: 30px;
-}
+.profile_img{width:80px;height:80px;border: 1px solid #eaeaea; border-radius:40px;margin: 0 auto;margin-bottom: 50px;overflow: hidden;}
+.profile_img_area{margin-bottom: 30px;}
 @media (max-width: 480px) { 
     .frm-view{width:90%;margin: 0 auto; margin-top:30px; padding: 5%;} 
     .form-group>input{height:35px;width: 100%;padding-left: 25%;}
@@ -44,35 +31,7 @@ a{color:gray;}
 }
 </style>
 <script>
-    $(document).ready(function(){
-        $("#regist-view").hide();$("#forgot-view").hide();
-        $(".go-login-btn").click(function(){$(".frm-view").hide();$("#login-view").show();});
-        $(".go-regist-btn").click(function(){$(".frm-view").hide(); $("#regist-view").show();});
-        $(".go-forgot-btn").click(function(){$(".frm-view").hide();$("#forgot-view").show();});
-        $(".login-btn").click(function(){
-            if($("#lg_userid").val()==""){
-                alert("아이디를 입력해 주세요.");
-                return false;
-            }
-            else if($("#lg_password").val()==""){
-                alert("암호를 입력해 주세요.");
-                return false;
-            }
-            else if($("#lg_userid").val()=="daiunii" && $("#lg_password")=="a1234"){
-                alert("Login success");
-            }
-            else alert("You can not access this page");
-        });
-        $(".profile_img").click(function(){
-            $(".profile_img_input").click();
-        });
-        $(".regist-submit-btn").click(function(){
-            if(!$("#reg_agree").is(":checked")){
-                alert("agree check false");
-                return false;
-            }
-        });
-    });
+    
 </script>
 </head>
 <body style="display: inline;">
