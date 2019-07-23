@@ -1,0 +1,20 @@
+$(window).scroll(function(){
+    if($(window).scrollTop()>100){
+        $("#header-content").addClass("scrolled");
+        $("#header").css("opacity","0.9");
+    }
+    else{
+        $("#header-content").removeClass("scrolled");
+        $("#header").css("opacity","1");
+    }
+});
+$(document).ready(function(){
+    //$("#testDiv").load("header.html");
+    $(".profile").click(function(){
+        location.href="myPage.html";
+    });
+    $("#tap_menus").find("a").click(function(){
+        $("#tap_menus").find("a").removeClass("tap_menu_active");
+        $(this).addClass("tap_menu_active");
+    });
+});
