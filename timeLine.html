@@ -2,21 +2,23 @@
 <head>
 <title>Petorial</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/789a18aea4.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script src="js/includeHTML.js"></script>
+</head>
 <style>
-body{background-color: #fafafa; font-size:0.9em;}
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
 margin: 0;padding: 0;border: 0;font: inherit;font-style: inherit;font-variant-ligatures: inherit;font-variant-caps: inherit;font-variant-numeric: inherit;font-variant-east-asian: inherit; font-weight: inherit;font-stretch: inherit;font-size: inherit;line-height: inherit;font-family: inherit;vertical-align: baseline; }
+body{background-color: #fafafa; font-size:0.9em;}
 #header{z-index:10;background-color: white;position:fixed;top:0;width: 100%;border-bottom: 1px solid lightgray; border-bottom: 1px solid #efefef;}
 #header-content{display: block;height: 77px;padding: 26px 20px;display: flex;max-width: 1000px;margin:0 auto;transition: all 0.5s;}    
 #header-searchbar{font-size:0.9em;height:28px;border: 1px solid #ddd; background-color: #fafafa;border-radius: 2px;text-align: center;}
-#header-menu{display:block;float: right;}
-#header-menu>img{width: 24px;height: 24px;float: left;}
+#header-menu{display:block;width: 40%;}
+#header-menu>img{width: 24px;height: 24px; float: right;}
 #header-logo{display: block;height: 32px;display: inherit;}
 #header-logo>img:last-child{padding-left:16px;border-left: 1px solid black;}
 #contents{display: flex;margin: 70px auto;}
@@ -27,14 +29,14 @@ margin: 0;padding: 0;border: 0;font: inherit;font-style: inherit;font-variant-li
 form[name="comment-frm"]{margin-top: 16px;}
 form[name="comment-frm"]>textarea{width: 90%; border: 0;color: #262626;height: 18px;max-height: 80px;outline: 0;padding: 0;resize: none;}
 form[name="comment-frm"]>button{display: inline; padding:0;border:none;background-color: white; color:#3897f0;font-weight: 600; opacity: 0.5;}
-.base-card{background-color:white;border: 1px solid #efefef;border-radius: 3px;}
+.base-card{display: flex;background-color:white;border: 1px solid #efefef;border-radius: 3px;}
 .cards{display:block;width: 100%;min-width:250px;height: auto;margin-bottom: 15px;}
 .cards>img{width: 100%;}
 .mini-card>div:first-child{width:100%;height:20px; background-color: white;overflow: hidden;font-size: 0.8em; color: #999;margin-top:12px;padding: 4px 16px;}
-.mini-card>div:first-child>span{color:black; font-weight: 600;font-size: 0.8em;float:right;}
+.mini-card>div:first-child>span{color:black; font-weight: 600;font-size: 0.8em;}
 .my-profile>div>span:first-child{font-size: 14px;line-height: 18px;margin-bottom: 4px;}
 .my-profile{margin-bottom: 16px;}
-.profile{display: flex;padding:16px;height:60px;-webkit-box-align: center;align-items: center;}
+.profile{display: flex;float:left;width:90%;padding:16px;height:60px;-webkit-box-align: center;align-items: center;}
 .profile>img{margin-top: 4px;}
 .profile>div{margin-left: 14px;line-height: 15px;font-size: 12px;}
 .profile>div>a:first-child{font-weight: 600;color: #262626;}
@@ -47,6 +49,9 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
 .comment-write{padding: 10px 0; border-top: 1px solid #efefef;color: #999;-webkit-flex-shrink: 0;-ms-flex-negative: 0;flex-shrink: 0;font-size: 14px;line-height: 18px;min-height: 56px;-webkit-box-pack: center;}
 .feed-upload-time{color: lightgray;font-size: 12px;}
 .scrolled{padding:10px 20px !important;height:45px !important;opacity: 0.9 !important;}
+.more-option{width:10%;color:gray;float:left;font-weight:bold;font-size: 28px;}
+.card-iconarea>img{width: 24px;height: 24px;}
+.card-iconarea{margin-top:5px;}
 @media (max-width: 500px) { 
     #sideBar{display: none;}
     #cardSection{width:90%;margin: 0 5%;}
@@ -61,7 +66,7 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
     .comment-write{font-size: 12px;}
     .feed-upload-time{font-size: 10px;}
 }
-@media (min-width: 500px) and (max-width: 1000px) { 
+@media (min-width: 500px) and (max-width: 800px) { 
     #sideBar{display: none;}
     #cardSection{margin: 0 auto;}
     #contents{width: 90%;padding-top:60px;}
@@ -71,16 +76,15 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
     #header-menu{width: 40%;}
     #header-menu>img{margin-left: 30px;}
 }
-@media (min-width:1000px) {
+@media (min-width:800px) {
     #cardSection{width:620px;}
     #header-searchbar{width:215px;}
     #contents{width: 950px;padding-top:60px;}
-    #header-logo{width: 30%;min-width:180px;}
-    #header-menu{width: 20%;}
+    #header-logo{width: 40%;min-width:180px;}
+    #header-menu{width: 40%;}
     #header-menu>img{margin-left: 30px;}
 }
 </style>
-</head>
 <script>
     $(window).scroll(function(){
         if($(window).scrollTop()>100){
@@ -102,9 +106,9 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
             </div>
             <input id="header-searchbar" type="text" placeholder="검색">
             <div id="header-menu">
-                <img src="../img/compass.png">
+                    <img src="../img/user.png">
                 <img src="../img/like.png">
-                <img src="../img/user.png">
+                <img src="../img/compass.png">
             </div>
         </div>
     </div>
@@ -119,11 +123,15 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
                         <a>Gwangju, South Korea</a>
                     </div>
                 </div>
+                <div class="more-option">...</div>
                 <img src="../img/62599857_152953279192164_3075927762384770142_n.jpg" />
                 <div class="card-etc">
+                    <div class="card-iconarea">
+                        <img src="../img/like.png">
+                    </div>
                     <div class="like-counts">좋아요 <span>54</span>개</div>
                     <div class="comments">
-                        <span>ssuuu_n</span>ㅎㅎㅎ
+                        <span>ssuuu_n</span> ㅎㅎㅎ
                     </div>
                     <div class="feed-upload-time">1일전</div>
                     <div class="comment-write">
@@ -144,9 +152,9 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
                 </div>
                 <img src="../img/66608159_391614281709818_7378906192366465856_n.jpg" />
                 <div class="card-etc">
-                    <div class="like-counts">좋아요 <span>54</span>개</div>
+                    <div class="like-counts">좋아요 <span>32</span>개</div>
                     <div class="comments">
-                        <span>ssuuu_n</span>ㅎㅎㅎ
+                        <span>ssuuu_n</span> 야옹이 커여워 ㅠㅠ
                     </div>
                     <div class="feed-upload-time">1일전</div>
                     <div class="comment-write">
