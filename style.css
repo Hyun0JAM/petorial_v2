@@ -10,7 +10,7 @@ body{background-color: #fafafa; font-size:0.9em;}
 #header-logo{display: block;height: 32px;display: inherit;}
 #header-logo>img:last-child{padding-left:16px;border-left: 1px solid black;}
 /* timeline */
-#contents{display: flex;margin: 70px auto;}
+#contents{display: flex; margin: 70px auto;}
 #sideBar{width:300px; margin-left:28px;}
 #side-footer{COLOR:#DDD;font-size: 0.7em;}
 #story{width:100%;height:220px;}
