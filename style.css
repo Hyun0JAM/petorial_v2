@@ -75,7 +75,7 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
     form[name="comment-frm"]>textarea {width: 85%;}
     .like-counts{font-size: 0.7em;}
     .comments{font-size: 12px;}
-    .comment-write{font-size: 12px;}
+    .comment-write{font-size: 12px;height:40px;}
     .feed-upload-time{font-size: 10px;}
     #my_profile_section_img>img{width:77px;height:77px;border-radius:38.5px;}
     #my_profile_section_content{padding-top:0px;}
