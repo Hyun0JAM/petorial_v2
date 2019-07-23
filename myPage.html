@@ -10,55 +10,6 @@
 <script src="https://kit.fontawesome.com/789a18aea4.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script src="base.js"></script>
-<style>
-#contents{display: block;}
-#my_profile_section{width:100%;}
-#my_profile_section_img{display:flex;float:left;width:28%;}
-#my_profile_section_img>img{margin:0 auto;overflow:hidden;}
-#my_profile_section_content{float:left;padding-top:20px;}
-#my_profile_section_content>div{margin-bottom:20px;}
-#my_profile_section_content>div>h1{font-size: 28px;line-height: 32px;font-weight:400;}
-#tap_contents{display:inline-block;width:100%;height:100px;border-top:1px solid #efefef;}
-.tap_menu_active{border-top: 1px solid black;}
-.my_profile_count>span{display:inline-block;font-size: 16px;margin-right: 20px;}
-.my_profile_count>span>span{font-weight: bold;margin-left: 4px;}
-.my_profile_name{font-weight: 600}
-.feed_area{width:100%;padding: 0;margin:0;}
-.feed_area>div{display:inline-block;padding:10px;}
-.feed_area>div>img{width: 100%;height:100%;}
-@media (min-width:700px){
-    #my_profile_section{height:150px; margin-bottom: 44px;}
-    #my_profile_section_img>img{width:150px;height:150px;border-radius:75px;}
-    #my_profile_section_content{padding-top:20px;}
-    #tap_menus{width: 440px;margin:0 auto;}
-    #tap_menus>a{padding:20px 0;width: 70px;margin-right:30px;}
-    #tap_menus>a>span{margin-left: 5px;}
-    #tap_menus>a>span>i{margin-right: 10px;}
-    #tap_menus>a{display: inline-block; font-size:12px;}
-    .feed_area>div:nth-child(3n){margin:0;padding: 10px;}
-}
-@media (max-width:700px){
-    #my_profile_section{height:100px; margin-bottom: 32px;}
-    #my_profile_section_img>img{width:77px;height:77px;border-radius:75px;}
-    #my_profile_section_content{padding-top:10px;}
-    #my_profile_section_content>div>h1{font-size: 28px;line-height: 32px;font-weight:400;}
-    #contents{width: 100%;}
-    #tap_menus{width: 100%;}
-    #tap_menus>a{padding: 3% 0; margin:0;}
-    #tap_menus>a>span{margin:0 auto;}
-    .feed_area>div{width: 100%;padding:2px;}
-    .feed_area>div>img{width:100%;height:100%;overflow: hidden;}
-}
-@media (max-width:578px){
-    #my_profile_section_img>img{width:77px;height:77px;border-radius:38.5px;}
-    #my_profile_section_content>div>h1{font-size: 18px;line-height: 24px;font-weight:400;}
-    #tap_menus{display:block;width: 100%;}
-    #tap_menus>a{width:25%; padding: 3% 0; margin:0;float:left;}
-    #tap_menus>a>span{margin:0 auto;}
-    .feed_area>div{width: 33%;padding:1px;}
-    .feed_area>div:nth-child(3n){margin:0;padding: 1px;}
-}
-</style>
 </head>
 <div id="header">
     <div id="header-content">
@@ -69,9 +20,10 @@
         </div>
         <input id="header-searchbar" type="text" placeholder="검색">
         <div id="header-menu">
-            <img src="../img/user.png">
-            <img src="../img/like.png">
-            <img src="../img/compass.png">
+            <img src="http://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/256/user-icon.png" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQlRWJTaS_4_1_RQejM7ZX-k342zYMbIVwVIXvLuT4BlYN1vD5" />
+            <img src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/32/519777-89_Compass-512.png" />
+
         </div>
     </div>
 </div>
@@ -91,11 +43,16 @@
         </div>
     </div>
     <div id="tap_contents">
+        <div class="tap_area_count row">
+            <div>게시물<br/><span>1</span></div>
+            <div>팔로워<br/><span>2</span></div>
+            <div>팔로우<br/><span>3</span></div>
+        </div>
         <div id="tap_menus" class="row">
-            <a class="tap_menu_active col-sm-3"><span><i class="fas fa-border-all"></i>게시물</span></a>
-            <a class="col-sm-3"><span><i class="fas fa-border-all"></i>IGTV</span></a>
-            <a class="col-sm-3"><span><i class="far fa-bookmark"></i>저장됨</span></a>
-            <a class="col-sm-3"><span><i class="far fa-bookmark"></i>태그됨</span></a>
+            <a class="tap_menu_active col-sm-3"><i class="fas fa-border-all"></i><span>게시물</span></a>
+            <a class="col-sm-3"><i class="fas fa-tv"></i></i><span>IGTV</span></a>
+            <a class="col-sm-3"><i class="far fa-bookmark"></i><span>저장됨</span></a>
+            <a class="col-sm-3"><i class="far fa-user-circle"></i></i><span>태그됨</span></a>
         </div>
         <div class="feed_area row">
             <div class="col-sm-4"><img src="https://scontent-gmp1-1.cdninstagram.com/vp/c7bd9b8a4ac41f42e625f45c43108cb1/5DE804AC/t51.2885-15/sh0.08/e35/s640x640/62599857_152953279192164_3075927762384770142_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com" /></div>

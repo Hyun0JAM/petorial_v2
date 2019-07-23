@@ -1,4 +1,4 @@
-
+/* base */
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
 margin: 0;padding: 0;border: 0;font: inherit;font-style: inherit;font-variant-ligatures: inherit;font-variant-caps: inherit;font-variant-numeric: inherit;font-variant-east-asian: inherit; font-weight: inherit;font-stretch: inherit;font-size: inherit;line-height: inherit;font-family: inherit;vertical-align: baseline; }
 body{background-color: #fafafa; font-size:0.9em;}
@@ -9,6 +9,7 @@ body{background-color: #fafafa; font-size:0.9em;}
 #header-menu>img{width: 24px;height: 24px; float: right;}
 #header-logo{display: block;height: 32px;display: inherit;}
 #header-logo>img:last-child{padding-left:16px;border-left: 1px solid black;}
+/* timeline */
 #contents{display: flex;margin: 70px auto;}
 #sideBar{width:300px; margin-left:28px;}
 #side-footer{COLOR:#DDD;font-size: 0.7em;}
@@ -40,10 +41,34 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
 .more-option{width:10%;color:gray;float:left;font-weight:bold;font-size: 28px;}
 .card-iconarea>img{width: 24px;height: 24px;}
 .card-iconarea{margin-top:5px;}
-@media (max-width: 500px) { 
+/* mypage */
+#contents{display: block;}
+#my_profile_section{width:100%;}
+#my_profile_section_img{display:flex;float:left;width:28%;}
+#my_profile_section_img>img{margin:0 auto;overflow:hidden;}
+#my_profile_section_content{float:left;}
+#my_profile_section_content>div{margin-bottom:20px;}
+#my_profile_section_content>div>h1{font-size: 28px;line-height: 32px;font-weight:400;}
+#tap_contents{display:inline-block;width:100%;height:100px;border-top:1px solid #efefef;}
+#tap_menus>a>span{margin-left: 2px;}
+#tap_menus>a>i{color:gray;}
+.my_profile_count>span{display:inline-block;font-size: 16px;margin-right: 20px;}
+.my_profile_count>span>span{font-weight: bold;margin-left: 4px;}
+.my_profile_name{font-weight: 600}
+.feed_area{width:100%;padding: 0;margin:0;margin-top:4px;}
+.feed_area>div{display:inline-block;padding:10px;}
+.feed_area>div>img{width: 100%;height:100%;}
+.tap_area_count>div{width:33%;padding: 10px 0;text-align:center;color:gray;}
+.tap_area_count>div>span{font-weight: bold;margin-left:10px;color:black;}
+@media (max-width: 578px) { 
+    /* none */
     #sideBar{display: none;}
-    #cardSection{width:90%;margin: 0 5%;}
     #header-searchbar{display: none;}
+    #tap_menus>a>span{display: none;}
+    .my_profile_count{display: none;}
+
+    #cardSection{width:90%;margin: 0 5%;}
+    #header-content{width: 100%;}
     #contents{width: 100%;padding-top:30px;}
     #header-logo{display: contents;width: 40%;padding-left: 10%;}
     #header-menu{margin-left:25%;}
@@ -53,22 +78,59 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
     .comments{font-size: 12px;}
     .comment-write{font-size: 12px;}
     .feed-upload-time{font-size: 10px;}
+    #my_profile_section_img>img{width:77px;height:77px;border-radius:38.5px;}
+    #my_profile_section_content{padding-top:0px;}
+    #my_profile_section_content>div>h1{font-size: 18px;line-height: 24px;font-weight:400;}
+    #tap_menus{width: 100%;margin:0;border-top:1px solid #efefef;}
+    #tap_menus>a{display:inline-block; width:25%; padding: 3% 0;}
+    #tap_menus>a>i{margin-left:50%;}
+    .feed_area>div{width: 33.3%;padding:1px;}
+    .feed_area>div:nth-child(3n){margin:0;padding: 1px;padding-right: 0;}
 }
-@media (min-width: 500px) and (max-width: 800px) { 
+@media (min-width: 578px) and (max-width: 768px) { 
+    /* none */
     #sideBar{display: none;}
+    #tap_menus>a>span{display: none;}
     #cardSection{margin: 0 auto;}
+    .my_profile_count{display: none;}
+
     #contents{width: 90%;padding-top:60px;}
+    #header{width: 100%;}
     #header-content{width: 100%;}
     #header-logo{width: 30%;}
     #header-searchbar{width:40%;}
     #header-menu{width: 40%;}
     #header-menu>img{margin-left: 30px;}
+    #my_profile_section{height:100px; margin-bottom: 32px;}
+    #my_profile_section_img>img{width:77px;height:77px;border-radius:75px;}
+    #my_profile_section_content{padding-top:10px;}
+    #my_profile_section_content>div>h1{font-size: 28px;line-height: 32px;font-weight:400;}
+    #contents{width: 100%;}
+    #tap_menus{width: 100%;margin:0;border-top:1px solid #efefef;}
+    #tap_menus>a{margin: 0;padding: 3% 0; margin:0;}
+    #tap_menus>a>i{margin-left:50%;}
+    #tap_menus>a>span{margin:0 auto;}
+    .feed_area>div{width: 100%;padding:2px;}
+    .feed_area>div>img{width:100%;height:100%;overflow: hidden;}
 }
-@media (min-width:800px) {
+@media (min-width:769px) {
+    /* none */
+    .tap_area_count{display: none;}
+
     #cardSection{width:620px;}
     #header-searchbar{width:215px;}
     #contents{width: 950px;padding-top:60px;}
     #header-logo{width: 40%;min-width:180px;}
     #header-menu{width: 40%;}
     #header-menu>img{margin-left: 30px;}
+    #my_profile_section{height:150px; margin-bottom: 44px;}
+    #my_profile_section_img>img{width:150px;height:150px;border-radius:75px;}
+    #my_profile_section_content{padding-top:20px;}
+    #tap_menus{width: 440px;margin:0 auto;}
+    #tap_menus>a{padding:20px 0;width: 70px;}
+    #tap_menus>a>span{margin-left: 5px;}
+    #tap_menus>a>span>i{margin-right: 10px;}
+    #tap_menus>a{display: inline-block; font-size:12px;}
+    .feed_area>div:nth-child(3n){margin:0;padding: 10px;}
+    .tap_menu_active{border-top: 1px solid black;}
 }
