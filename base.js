@@ -13,6 +13,9 @@ $(document).ready(function(){
     $(".profile").click(function(){
         location.href="myPage.html";
     });
+    $("#header-logo").click(function(){
+        location.href="timeLine.html";
+    });
     $("#tap_menus").find("a").click(function(){
         $("#tap_menus").find("a").removeClass("tap_menu_active");
         $(this).addClass("tap_menu_active");

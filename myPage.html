@@ -12,36 +12,51 @@
 <script src="base.js"></script>
 <style>
 #contents{display: block;}
-#my_profile_section{width:100%;height:150px; margin-bottom: 44px;}
+#my_profile_section{width:100%;}
 #my_profile_section_img{display:flex;float:left;width:28%;}
 #my_profile_section_img>img{margin:0 auto;overflow:hidden;}
 #my_profile_section_content{float:left;padding-top:20px;}
 #my_profile_section_content>div{margin-bottom:20px;}
 #my_profile_section_content>div>h1{font-size: 28px;line-height: 32px;font-weight:400;}
 #tap_contents{display:inline-block;width:100%;height:100px;border-top:1px solid #efefef;}
-#tap_menus{width: 440px;margin:0 auto;}
-#tap_menus>a{display: inline-block;padding:20px 0;width: 70px; font-size:12px;margin-right:30px;}
-#tap_menus>a>span{margin-left: 5px;}
-#tap_menus>a>span>i{margin-right: 10px;}
 .tap_menu_active{border-top: 1px solid black;}
 .my_profile_count>span{display:inline-block;font-size: 16px;margin-right: 20px;}
 .my_profile_count>span>span{font-weight: bold;margin-left: 4px;}
 .my_profile_name{font-weight: 600}
-.feed_area{width:100%;padding: 0;}
-.feed_area>div{display:inline-block;}
+.feed_area{width:100%;padding: 0;margin:0;}
+.feed_area>div{display:inline-block;padding:10px;}
 .feed_area>div>img{width: 100%;height:100%;}
-.feed_area>div:nth-child(3n){margin:0;padding: 0;}
 @media (min-width:700px){
+    #my_profile_section{height:150px; margin-bottom: 44px;}
     #my_profile_section_img>img{width:150px;height:150px;border-radius:75px;}
-    .feed_area>div{width: 31%;height:31%;margin: 0 2.5% 2.5% 0;}
+    #my_profile_section_content{padding-top:20px;}
+    #tap_menus{width: 440px;margin:0 auto;}
+    #tap_menus>a{padding:20px 0;width: 70px;margin-right:30px;}
+    #tap_menus>a>span{margin-left: 5px;}
+    #tap_menus>a>span>i{margin-right: 10px;}
+    #tap_menus>a{display: inline-block; font-size:12px;}
+    .feed_area>div:nth-child(3n){margin:0;padding: 10px;}
 }
 @media (max-width:700px){
+    #my_profile_section{height:100px; margin-bottom: 32px;}
     #my_profile_section_img>img{width:77px;height:77px;border-radius:75px;}
+    #my_profile_section_content{padding-top:10px;}
+    #my_profile_section_content>div>h1{font-size: 28px;line-height: 32px;font-weight:400;}
     #contents{width: 100%;}
-    .feed_area>div{width: 32%;height:33%;margin: 0 2px 2px 0;}
+    #tap_menus{width: 100%;}
+    #tap_menus>a{padding: 3% 0; margin:0;}
+    #tap_menus>a>span{margin:0 auto;}
+    .feed_area>div{width: 100%;padding:2px;}
+    .feed_area>div>img{width:100%;height:100%;overflow: hidden;}
 }
 @media (max-width:578px){
     #my_profile_section_img>img{width:77px;height:77px;border-radius:38.5px;}
+    #my_profile_section_content>div>h1{font-size: 18px;line-height: 24px;font-weight:400;}
+    #tap_menus{display:block;width: 100%;}
+    #tap_menus>a{width:25%; padding: 3% 0; margin:0;float:left;}
+    #tap_menus>a>span{margin:0 auto;}
+    .feed_area>div{width: 33%;padding:1px;}
+    .feed_area>div:nth-child(3n){margin:0;padding: 1px;}
 }
 </style>
 </head>
@@ -76,18 +91,18 @@
         </div>
     </div>
     <div id="tap_contents">
-        <div id="tap_menus">
-            <a class="tap_menu_active"><span><i class="fas fa-border-all"></i>게시물</span></a>
-            <a><span><i class="fas fa-border-all"></i>IGTV</span></a>
-            <a><span><i class="far fa-bookmark"></i>저장됨</span></a>
-            <a><span><i class="far fa-bookmark"></i>태그됨</span></a>
+        <div id="tap_menus" class="row">
+            <a class="tap_menu_active col-sm-3"><span><i class="fas fa-border-all"></i>게시물</span></a>
+            <a class="col-sm-3"><span><i class="fas fa-border-all"></i>IGTV</span></a>
+            <a class="col-sm-3"><span><i class="far fa-bookmark"></i>저장됨</span></a>
+            <a class="col-sm-3"><span><i class="far fa-bookmark"></i>태그됨</span></a>
         </div>
-        <div class="feed_area">
-            <div><img src="https://scontent-gmp1-1.cdninstagram.com/vp/c7bd9b8a4ac41f42e625f45c43108cb1/5DE804AC/t51.2885-15/sh0.08/e35/s640x640/62599857_152953279192164_3075927762384770142_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com" /></div>
-            <div><img src="https://scontent-gmp1-1.cdninstagram.com/vp/2ff6c1cbe7c7920dcd5a640ab4657ac6/5DE4E9B8/t51.2885-15/sh0.08/e35/s640x640/60982156_292679064954356_2369476351113574898_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com" /></div>
-            <div><img src="https://scontent-gmp1-1.cdninstagram.com/vp/8df8a5ed30ecddfeae1eaef6e9236d1c/5DB4B9C4/t51.2885-15/sh0.08/e35/s640x640/64388465_126721781905470_4890774751777825040_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com" /></div>
-            <div><img src="https://scontent-gmp1-1.cdninstagram.com/vp/5fae611ab681c96be90c313c0f8ae7c8/5DEAA82B/t51.2885-15/sh0.08/e35/c109.0.861.861/s640x640/38618362_454531661698724_8176504682219307008_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com" /></div>
-            <div><img src="https://scontent-gmp1-1.cdninstagram.com/vp/412f445332faa85900c59def281fb090/5DD39527/t51.2885-15/sh0.08/e35/s640x640/67659972_795300060865281_3743676830511204806_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com" /></div>
+        <div class="feed_area row">
+            <div class="col-sm-4"><img src="https://scontent-gmp1-1.cdninstagram.com/vp/c7bd9b8a4ac41f42e625f45c43108cb1/5DE804AC/t51.2885-15/sh0.08/e35/s640x640/62599857_152953279192164_3075927762384770142_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com" /></div>
+            <div class="col-sm-4"><img src="https://scontent-gmp1-1.cdninstagram.com/vp/2ff6c1cbe7c7920dcd5a640ab4657ac6/5DE4E9B8/t51.2885-15/sh0.08/e35/s640x640/60982156_292679064954356_2369476351113574898_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com" /></div>
+            <div class="col-sm-4"><img src="https://scontent-gmp1-1.cdninstagram.com/vp/8df8a5ed30ecddfeae1eaef6e9236d1c/5DB4B9C4/t51.2885-15/sh0.08/e35/s640x640/64388465_126721781905470_4890774751777825040_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com" /></div>
+            <div class="col-sm-4"><img src="https://scontent-gmp1-1.cdninstagram.com/vp/5fae611ab681c96be90c313c0f8ae7c8/5DEAA82B/t51.2885-15/sh0.08/e35/c109.0.861.861/s640x640/38618362_454531661698724_8176504682219307008_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com" /></div>
+            <div class="col-sm-4"><img src="https://scontent-gmp1-1.cdninstagram.com/vp/412f445332faa85900c59def281fb090/5DD39527/t51.2885-15/sh0.08/e35/s640x640/67659972_795300060865281_3743676830511204806_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com" /></div>
         </div>
     </div>
 </div>
