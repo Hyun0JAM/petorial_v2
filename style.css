@@ -5,7 +5,7 @@ body{background-color: #fafafa; font-size:0.9em;}
 #header{z-index:10;background-color: white;position:fixed;top:0;width: 100%;border-bottom: 1px solid lightgray; border-bottom: 1px solid #efefef;}
 #header-content{display: block;height: 77px;padding: 26px 20px;display: flex;max-width: 1000px;margin:0 auto;transition: all 0.5s;}    
 #header-searchbar{font-size:0.9em;height:28px;border: 1px solid #ddd; background-color: #fafafa;border-radius: 2px;text-align: center;}
-#header-menu{display:block;width: 40%;}
+#header-menu{display:inline-block;width: 40%;}
 #header-menu>img{width: 24px;height: 24px; float: right;}
 #header-logo{display: block;height: 32px;display: inherit;}
 #header-logo>img:last-child{padding-left:16px;border-left: 1px solid black;}
@@ -42,7 +42,6 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
 .card-iconarea>img{width: 24px;height: 24px;}
 .card-iconarea{margin-top:5px;}
 /* mypage */
-#contents{display: block;}
 #my_profile_section{width:100%;}
 #my_profile_section_img{display:flex;float:left;width:28%;}
 #my_profile_section_img>img{margin:0 auto;overflow:hidden;}
@@ -70,8 +69,8 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
     #cardSection{width:90%;margin: 0 5%;}
     #header-content{width: 100%;}
     #contents{width: 100%;padding-top:30px;}
-    #header-logo{display: contents;width: 40%;padding-left: 10%;}
-    #header-menu{margin-left:25%;}
+    #header-logo{display: block;}
+    #header-menu{margin-left:10%;}
     #header-menu>img{margin-left: 10px;}
     form[name="comment-frm"]>textarea {width: 85%;}
     .like-counts{font-size: 0.7em;}
@@ -94,7 +93,8 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
     #cardSection{margin: 0 auto;}
     .my_profile_count{display: none;}
 
-    #contents{width: 90%;padding-top:60px;}
+    #contents{width: 100%;padding-top:60px;}
+    #cardSection{width:90%;}
     #header{width: 100%;}
     #header-content{width: 100%;}
     #header-logo{width: 30%;}
@@ -105,7 +105,6 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
     #my_profile_section_img>img{width:77px;height:77px;border-radius:75px;}
     #my_profile_section_content{padding-top:10px;}
     #my_profile_section_content>div>h1{font-size: 28px;line-height: 32px;font-weight:400;}
-    #contents{width: 100%;}
     #tap_menus{width: 100%;margin:0;border-top:1px solid #efefef;}
     #tap_menus>a{margin: 0;padding: 3% 0; margin:0;}
     #tap_menus>a>i{margin-left:50%;}
