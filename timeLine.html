@@ -9,6 +9,70 @@
 <script src="https://kit.fontawesome.com/789a18aea4.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script src="base.js"></script>
+<script>
+$(document).ready(function(){
+    $("#correct_num").val(getRandomNumber());
+    $("#base_check_btn").click(function(){
+        var correctNumber = $("#correct_num").val();
+        var s=0; b=0;
+        var getnum = $("#base_check_num").val();
+        if(getnum>9999||getnum<1000){
+            $(".error_msg").text("1~9사이의 4자리 숫자로 입력해 주세요.");
+            return false;
+        }
+        else{
+            for(var i=0;i<4;i++){
+				for(var j=i+1;j<4;j++){
+					if(getnum.charAt(j)==getnum.charAt(i)){
+						$(".error_msg").text("중복 된 숫자는 입력할 수 없습니다.");
+						return false;
+					}
+				}
+			}
+        }
+        $(".error_msg").text("");
+        for(var i=0;i<4;i++){
+            if(correctNumber.charAt(i)==getnum.charAt(i)) s++;
+            else{
+                for(var j=0;j<4;j++){
+                    if(correctNumber.charAt(j)==getnum.charAt(i)) b++;
+                }
+            }
+        }
+        $(".base_s").text(s);$(".base_b").text(b);
+        if(s==4){
+            $("#number_init_btn").show();
+            $(".correct_msg").show();
+        } 
+    });
+    $("#number_init_btn").click(function(){
+        $("#correct_num").val(getRandomNumber());
+        $("#number_init_btn").hide();
+        $(".correct_msg").hide();
+        $("#base_check_num").val("");
+        $(".base_s").text("0");
+    });
+});
+function getRandomNumber(){
+    var radomNumber = "";
+    var arr = [];
+    for(var i=0;i<4;i++){
+        var ranNum = Math.round((Math.random()*1000)%9);
+        for(var j=0;j<i;j++){
+            if(arr[j]==ranNum){
+                while(arr[j]==ranNum){
+                    ranNum =  Math.round((Math.random()*1000)%9);
+                }
+            }
+        }
+        arr[i] = ranNum;
+    }
+    for(var i=0;i<4;i++){
+        radomNumber += arr[i];
+    }
+    return radomNumber;
+}
+</script>
 <!--<link rel="import" href="header.html">-->
 </head>
 <div id="header">
