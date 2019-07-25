@@ -85,7 +85,7 @@ $(document).ready(function(){
         if(s==4){
             $("#number_init_btn").show();
             $(".correct_msg").show();
-        }
+        } 
     });
     $("#number_init_btn").click(function(){
         $("#correct_num").val(getRandomNumber());
