@@ -9,6 +9,7 @@ $(window).scroll(function(){
     }
 });
 $(document).ready(function(){
+    //index
     $("#regist-view").hide();$("#forgot-view").hide();
     $(".go-login-btn").click(function(){$(".frm-view").hide();$("#login-view").show();});
     $(".go-regist-btn").click(function(){$(".frm-view").hide(); $("#regist-view").show();});
@@ -27,6 +28,7 @@ $(document).ready(function(){
         }
         else alert("You can not access this page");
     });
+    //timeline
     $(".profile_img").click(function(){
         $(".profile_img_input").click();
     });
@@ -36,15 +38,22 @@ $(document).ready(function(){
             return false;
         }
     });
-    //$("#testDiv").load("header.html");
     $(".profile").click(function(){
         location.href="myPage.html";
     });
     $("#header-logo").click(function(){
         location.href="timeLine.html";
     });
+    //mypage
     $("#tap_menus").find("a").click(function(){
         $("#tap_menus").find("a").removeClass("tap_menu_active");
         $(this).addClass("tap_menu_active");
+    });
+    $(".feed_area").children().find("img").click(function(){
+        var $thisimg = $(this).attr("src");
+        $(".detail_picture").find("img").attr("src",$thisimg);
+    });
+    $("tr").click(function(){
+        console.log($(this).html());
     });
 });

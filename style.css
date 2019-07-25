@@ -60,6 +60,14 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
 .feed_area>div>img{width: 100%;height:100%;}
 .tap_area_count>div{width:33%;padding: 10px 0;text-align:center;color:gray;}
 .tap_area_count>div>span{font-weight: bold;margin-left:10px;color:black;}
+.feed_area>div>img:hover{opacity: 0.5;}
+/* modal */
+#imgmodal{width:90%;margin:0;padding:5%;}
+#imgmodal_right{width:40%; height:100%; background-color: white;}
+.modal-dialog{display: flex; width:100%;margin:0;padding: 0;}
+.detail_picture{width:60%;}
+.detail_picture>img{width:100%;height:100%;overflow:hidden;padding:0;margin:0;}
+
 @media (max-width: 578px) { 
     /* none */
     #sideBar{display: none;}
