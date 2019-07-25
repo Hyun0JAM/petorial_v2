@@ -98,6 +98,17 @@
         <div id="recommand" class="base-card mini-card">
             <div>회원님을 위한 추천<span>모두보기</span></div>
         </div>
+        <div id="baseball" class="base-card mini-card" style="display:block;width: 100%;height: 150px;">
+            <div style="width: 100%;display:block;height: 30px;">야구게임<button id="number_init_btn" type="button" style="margin-left: 10px;border:none;background-color: #efefef;box-shadow: 2px 2px 3px lightgray;font-weight: bold;color:gray;height:30px;display:none;">숫자 초기화</button></div>
+            <div style="padding:10px 35px;">
+                <input type="hidden" id="correct_num">
+                <input id="base_check_num" type="number" placeholder="4자리 숫자 입력" style="height: 30px;margin: 5px auto;">
+                <button id="base_check_btn" style="border:none;background-color: #efefef;box-shadow: 2px 2px 3px lightgray;font-weight: bold;color:gray;height:30px;">check</button>
+                <p class="error_msg" style="color: rgb(255, 124, 124); font-weight: bold;"></p>
+                <p>S : <span class="base_s">0</span>&nbsp; B : <span class="base_b">0</span></p>
+                <p class="correct_msg" style="color:red;font-weight: bold;display:none;">정답입니다!!</p>
+            </div>
+        </div>
         <div id="side-footer">
             Instagram 정보 지원홍보 센터 API 채용 정보 <br/>개인정보처리방침 약관 디렉터리 프로필 해시태그 언어
             © 2019 INSTAGRAM
