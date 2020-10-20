@@ -6,6 +6,7 @@ body{background-color: #fafafa; font-size:0.9em;}
 #header-content{display: block;height: 77px;padding: 26px 20px;display: flex;max-width: 1000px;margin:0 auto;transition: all 0.5s;}    
 #header-searchbar{font-size:0.9em;height:28px;border: 1px solid #ddd; background-color: #fafafa;border-radius: 2px;text-align: center;}
 #header-menu{display:inline-block;width: 120px;}
+#header-menu>.header-menu-icon{width: 35px; color: #ddd; text-align: right; display: inline-block; margin: 0 5px; cursor: pointer;}
 #header-menu>div{width: 24px;height: 24px;margin-left:16px; float: right;}
 #header-menu>div>img{width:100%;}
 #header-logo{display: block;height: 32px;display: inherit;}
@@ -14,8 +15,8 @@ body{background-color: #fafafa; font-size:0.9em;}
 #contents{display: flex; margin: 70px auto;}
 #sideBar{width:300px; margin-left:28px;}
 #side-footer{COLOR:#DDD;font-size: 0.7em;}
-#story{width:100%;height:220px;}
-#recommand{width:100%;height:200px;margin: 12px 0;}
+#story{width:100%;height:80px;}
+#recommand{width:100%;height:80px;margin: 12px 0;}
 form[name="comment-frm"]{margin-top: 16px;}
 form[name="comment-frm"]>textarea{width: 90%; border: 0;color: #262626;height: 18px;max-height: 80px;outline: 0;padding: 0;resize: none;}
 form[name="comment-frm"]>button{display: inline; padding:0;border:none;background-color: white; color:#3897f0;font-weight: 600; opacity: 0.5;}
@@ -42,6 +43,8 @@ form[name="comment-frm"]>button{display: inline; padding:0;border:none;backgroun
 .more-option{width:10%;color:gray;float:left;font-weight:bold;font-size: 28px;}
 .card-iconarea>img{width: 24px;height: 24px;}
 .card-iconarea{margin-top:5px;}
+
+#recommand>div>span,#story>div>span{margin-left: 10px; cursor: pointer;}
 /* mypage */
 #my_profile_section{width:100%;}
 #my_profile_section_img{display:flex;float:left;width:28%;}
